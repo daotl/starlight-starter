@@ -1,5 +1,15 @@
 declare module 'astro:content' {
 	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
+	interface Render {
 		'.md': Promise<{
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
@@ -174,34 +184,27 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		"articles": {
-"i-have-a-dream-1.md": {
-	id: "i-have-a-dream-1.md";
-  slug: "i-have-a-dream-1";
+		"docs": {
+"guides/example.md": {
+	id: "guides/example.md";
+  slug: "guides/example";
   body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
+  collection: "docs";
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"i-have-a-dream-2.md": {
-	id: "i-have-a-dream-2.md";
-  slug: "i-have-a-dream-2";
+"index.mdx": {
+	id: "index.mdx";
+  slug: "index";
   body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".md"] };
-"i-have-a-dream-3.md": {
-	id: "i-have-a-dream-3.md";
-  slug: "i-have-a-dream-3";
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"reference/example.md": {
+	id: "reference/example.md";
+  slug: "reference/example";
   body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
-} & { render(): Render[".md"] };
-"i-have-a-dream-4.md": {
-	id: "i-have-a-dream-4.md";
-  slug: "i-have-a-dream-4";
-  body: string;
-  collection: "articles";
-  data: InferEntrySchema<"articles">
+  collection: "docs";
+  data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
 };
 

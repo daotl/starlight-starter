@@ -1,22 +1,7 @@
-import { defineCollection, z } from 'astro:content'
-
-const articlesCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.string(),
-    pubDate: z.date(),
-    description: z.string().optional(),
-    author: z.string(),
-    image: z.object({
-      url: z.string(),
-      alt: z.string().optional(),
-    }).optional(),
-    desc: z.string(),
-    authorPhoto: z.string(),
-    tags: z.array(z.string()).optional(),
-  }),
-})
+import { docsSchema, i18nSchema } from '@astrojs/starlight/schema'
+import { defineCollection } from 'astro:content'
 
 export const collections = {
-  articles: articlesCollection,
+  docs: defineCollection({ schema: docsSchema() }),
+  i18n: defineCollection({ type: 'data', schema: i18nSchema() }),
 }
