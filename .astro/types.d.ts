@@ -185,9 +185,37 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"docs": {
-"guides/example.md": {
-	id: "guides/example.md";
-  slug: "guides/example";
+"en/guides.md": {
+	id: "en/guides.md";
+  slug: "en/guides";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"en/index.mdx": {
+	id: "en/index.mdx";
+  slug: "en";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"en/vue/element-plus.mdx": {
+	id: "en/vue/element-plus.mdx";
+  slug: "en/vue/element-plus";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"en/vue/example.mdx": {
+	id: "en/vue/example.mdx";
+  slug: "en/vue/example";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"guides.md": {
+	id: "guides.md";
+  slug: "guides";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
@@ -199,13 +227,20 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"reference/example.md": {
-	id: "reference/example.md";
-  slug: "reference/example";
+"vue/element-plus.mdx": {
+	id: "vue/element-plus.mdx";
+  slug: "vue/element-plus";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
+"vue/example.mdx": {
+	id: "vue/example.mdx";
+  slug: "vue/example";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
 };
 
 	};

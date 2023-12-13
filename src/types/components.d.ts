@@ -9,13 +9,21 @@ declare module 'vue' {
   export interface GlobalComponents {
     Components: typeof import('./../components/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
+    ElCol: typeof import('element-plus/es')['ElCol']
+    ElementPlus: typeof import('./../components/ElementPlus.vue')['default']
+    ElRow: typeof import('element-plus/es')['ElRow']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     HiPage: typeof import('./../components/HiPage.vue')['default']
     Home: typeof import('./../components/Home.vue')['default']
     README: typeof import('./../components/README.md')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Test: typeof import('./../components/Test.vue')['default']
     TheCounter: typeof import('./../components/TheCounter.vue')['default']
     TheFooter: typeof import('./../components/TheFooter.vue')['default']
     TheInput: typeof import('./../components/TheInput.vue')['default']
+    VueExample: typeof import('./../components/VueExample.vue')['default']
   }
 }

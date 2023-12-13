@@ -14,22 +14,58 @@ export default defineConfig({
       jsx: true,
     }),
     UnoCSS({ injectReset: true }),
+    // https://starlight.astro.build/zh-cn/
     starlight({
       title: 'My Docs',
       social: {
-        github: 'https://github.com/withastro/starlight',
+        github: 'https://github.com/daotl/starlight-starter',
+      },
+      // 为此网站设置英语为默认语言。
+      defaultLocale: 'root',
+      locales: {
+        root: {
+          label: '简体中文',
+          lang: 'zh-CN',
+        },
+        // 英文文档在 `src/content/docs/en/` 中。
+        en: {
+          label: 'English',
+        },
+        // 阿拉伯文档在 `src/content/docs/ar/` 中。
+        ar: {
+          label: 'العربية',
+          dir: 'rtl',
+        },
       },
       sidebar: [
         {
           label: 'Guides',
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: 'Example Guide', link: '/guides/example/' },
-          ],
+          translations: {
+            'zh-CN': '指南',
+          },
+          link: '/guides',
         },
         {
-          label: 'Reference',
-          autogenerate: { directory: 'reference' },
+          label: 'VUE',
+          items: [
+            {
+              label: 'example',
+              translations: {
+                'zh-CN': '事例',
+                en: 'Example',
+              },
+              link: '/vue/example',
+            },
+            {
+              label: 'element',
+              translations: {
+                'zh-CN': 'Element plus',
+                en: 'Element plus',
+              },
+              link: '/vue/element-plus',
+            },
+          ],
+
         },
       ],
     }),
