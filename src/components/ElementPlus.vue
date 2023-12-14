@@ -11,6 +11,7 @@ const currentDate = ref(new Date())
       :key="o"
       :span="8"
       :offset="index > 0 ? 2 : 0"
+      style="margin-top: 0"
     >
       <el-card :body-style="{ padding: '0px' }">
         <img
